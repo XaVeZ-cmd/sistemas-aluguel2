@@ -13,6 +13,14 @@ import java.time.LocalDate;
  */
 public class Cliente {
     private Integer idCliente;
+    private String nome;
+    private String cpf;
+    private String rg;
+    private LocalDate dataNascimemto;
+    private String rua;
+    private String numeroCasa;
+    private String bairro;
+    private String cidade;
 
     public Integer getIdCliente() {
         return idCliente;
@@ -86,14 +94,7 @@ public class Cliente {
         this.cidade = cidade;
     }
     
-    private String nome;
-    private String cpf;
-    private String rg;
-    private LocalDate dataNascimemto;
-    private String rua;
-    private String numeroCasa;
-    private String bairro;
-    private String cidade;
+    
     
     
     
