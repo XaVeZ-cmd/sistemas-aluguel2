@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ui.main;
 
 import java.io.IOException;
@@ -20,10 +16,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
- *
- * @author lusst
- */
+
 public class PrincipalController implements Initializable {
     
     private Label label;
@@ -38,19 +31,18 @@ public class PrincipalController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void abrirJanelaAtor(ActionEvent event) throws IOException {
+    private void abrirjanelaRoupa(ActionEvent event) throws IOException {
         //Código para abrir uma nova Janela
         //Ler o FXML que representa a nova janela
         //(adicionar o throws)
         Parent root = FXMLLoader.load(getClass()
-                .getResource("/ui/ator/JanelaAtor.fxml"));
+                .getResource("/ui.roupa/Roupa.fxml"));
         //Criando a cena
         Scene scene = new Scene(root);
         //Criando a janela (STAGE) 
         Stage stage = new Stage(StageStyle.UTILITY);
         //Titulo na janela
-        stage.setTitle("Cadastro de Ator");
+        stage.setTitle("Cadastro Roupa");
         //Adicionando a cena na janela
         stage.setScene(scene);
         
@@ -63,9 +55,8 @@ public class PrincipalController implements Initializable {
         //Mostrando a nova janela
         stage.show();
         
-    }
-
-    @FXML
+    }}
+/*
     private void abrirJanelaFilme(ActionEvent event) throws IOException {
     
         //Código para abrir uma nova Janela
@@ -92,5 +83,16 @@ public class PrincipalController implements Initializable {
         stage.show();
         
     }
+
+    
+
+    @FXML
+    private void abrirjanelaCliente(ActionEvent event) {
+    }
+
+    @FXML
+    private void abrirjanelaAluguel(ActionEvent event) {
+    }
     
 }
+*/

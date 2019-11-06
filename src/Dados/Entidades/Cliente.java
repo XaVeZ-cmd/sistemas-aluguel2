@@ -17,6 +17,8 @@ import javax.persistence.Id;
  */
 @Entity
 public class Cliente {
+    
+    // Dados da entidade da tela cliente
      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCliente;
@@ -28,6 +30,33 @@ public class Cliente {
     private String numeroCasa;
     private String bairro;
     private String cidade;
+    private Integer telefone1;
+    private Integer telefone2;
+    private Integer email;
+
+    public Integer getTelefone1() {
+        return telefone1;
+    }
+
+    public void setTelefone1(Integer telefone1) {
+        this.telefone1 = telefone1;
+    }
+
+    public Integer getTelefone2() {
+        return telefone2;
+    }
+
+    public void setTelefone2(Integer telefone2) {
+        this.telefone2 = telefone2;
+    }
+
+    public Integer getEmail() {
+        return email;
+    }
+
+    public void setEmail(Integer email) {
+        this.email = email;
+    }
 
     public Integer getIdCliente() {
         return idCliente;
