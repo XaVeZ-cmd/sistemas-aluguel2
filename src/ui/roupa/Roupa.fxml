@@ -20,11 +20,11 @@
       <Button layoutX="84.0" layoutY="231.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
       <Button layoutX="166.0" layoutY="231.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
       <Button layoutX="235.0" layoutY="231.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
-      <TableView layoutX="22.0" layoutY="268.0" prefHeight="117.0" prefWidth="560.0">
+      <TableView fx:id="tabelaRoupa" layoutX="22.0" layoutY="268.0" prefHeight="117.0" prefWidth="560.0">
         <columns>
           <TableColumn fx:id="colNumeroDaRoupa" prefWidth="113.0" text="Nùmero da roupa" />
           <TableColumn fx:id="colTipoDaRoupa" prefWidth="184.0" text="Tipo da roupa" />
-            <TableColumn fx:id="textFieldCor" prefWidth="56.0" text="Cor" />
+            <TableColumn fx:id="colCor" prefWidth="56.0" text="Cor" />
         </columns>
       </TableView>
    </children>

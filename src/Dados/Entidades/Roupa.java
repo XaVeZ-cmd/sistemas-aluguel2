@@ -6,6 +6,7 @@
 package Dados.Entidades;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +26,62 @@ public class Roupa {
     private String tamanho;
     private String detalhes;
     private String genero;
+
+    public Roupa(String tipoRoupa, String cor, String tamanho, String detalhes, String genero) {
+        this.tipoRoupa = tipoRoupa;
+        this.cor = cor;
+        this.tamanho = tamanho;
+        this.detalhes = detalhes;
+        this.genero = genero;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 97 * hash + Objects.hashCode(this.idRoupa);
+        hash = 97 * hash + Objects.hashCode(this.tipoRoupa);
+        hash = 97 * hash + Objects.hashCode(this.cor);
+        hash = 97 * hash + Objects.hashCode(this.tamanho);
+        hash = 97 * hash + Objects.hashCode(this.detalhes);
+        hash = 97 * hash + Objects.hashCode(this.genero);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Roupa other = (Roupa) obj;
+        if (!Objects.equals(this.tipoRoupa, other.tipoRoupa)) {
+            return false;
+        }
+        if (!Objects.equals(this.cor, other.cor)) {
+            return false;
+        }
+        if (!Objects.equals(this.tamanho, other.tamanho)) {
+            return false;
+        }
+        if (!Objects.equals(this.detalhes, other.detalhes)) {
+            return false;
+        }
+        if (!Objects.equals(this.genero, other.genero)) {
+            return false;
+        }
+        if (!Objects.equals(this.idRoupa, other.idRoupa)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+    
     
 
     public Integer getIdRoupa() {

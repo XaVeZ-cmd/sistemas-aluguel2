@@ -1,4 +1,3 @@
-
 package ui.main;
 
 import java.io.IOException;
@@ -16,27 +15,24 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-
 public class PrincipalController implements Initializable {
-    
+
     private Label label;
-    
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
-    
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
+    @FXML
     private void abrirjanelaRoupa(ActionEvent event) throws IOException {
+        
         //Código para abrir uma nova Janela
         //Ler o FXML que representa a nova janela
         //(adicionar o throws)
         Parent root = FXMLLoader.load(getClass()
-                .getResource("/ui.roupa/Roupa.fxml"));
+                .getResource("/ui/roupa/Roupa.fxml"));
         //Criando a cena
         Scene scene = new Scene(root);
         //Criando a janela (STAGE) 
@@ -45,54 +41,70 @@ public class PrincipalController implements Initializable {
         stage.setTitle("Cadastro Roupa");
         //Adicionando a cena na janela
         stage.setScene(scene);
-        
+
         //Configurando o MODALITY
         //Diz respeito ao comportamento das janelas anteriores
         //quando essa for mostrada
         //Para bloquear interação com as janelas anteriores
         stage.initModality(Modality.APPLICATION_MODAL);
-        
+
         //Mostrando a nova janela
         stage.show();
-        
-    }}
-/*
-    private void abrirJanelaFilme(ActionEvent event) throws IOException {
-    
+
+    }
+
+    @FXML
+    private void abrirjanelaCliente(ActionEvent event) throws IOException {
+
         //Código para abrir uma nova Janela
         //Ler o FXML que representa a nova janela
         //(adicionar o throws)
         Parent root = FXMLLoader.load(getClass()
-                .getResource("/ui/filme/JanelaFilme.fxml"));
+                .getResource("/ui/cliente/Cliente.fxml"));
         //Criando a cena
         Scene scene = new Scene(root);
         //Criando a janela (STAGE) 
         Stage stage = new Stage(StageStyle.UTILITY);
         //Titulo na janela
-        stage.setTitle("Cadastro de Filme");
+        stage.setTitle("Cadastro de Cliente");
         //Adicionando a cena na janela
         stage.setScene(scene);
-        
+
         //Configurando o MODALITY
         //Diz respeito ao comportamento das janelas anteriores
         //quando essa for mostrada
         //Para bloquear interação com as janelas anteriores
         stage.initModality(Modality.APPLICATION_MODAL);
-        
+
         //Mostrando a nova janela
         stage.show();
-        
-    }
 
-    
-
-    @FXML
-    private void abrirjanelaCliente(ActionEvent event) {
     }
 
     @FXML
-    private void abrirjanelaAluguel(ActionEvent event) {
+    private void abrirjanelaAluguel(ActionEvent event) throws IOException {
+
+        //Código para abrir uma nova Janela
+        //Ler o FXML que representa a nova janela
+        //(adicionar o throws)
+        Parent root = FXMLLoader.load(getClass()
+                .getResource("/ui/aluguel/Aluguel.fxml"));
+        //Criando a cena
+        Scene scene = new Scene(root);
+        //Criando a janela (STAGE) 
+        Stage stage = new Stage(StageStyle.UTILITY);
+        //Titulo na janela
+        stage.setTitle("Cadastro de Aluguel");
+        //Adicionando a cena na janela
+        stage.setScene(scene);
+
+        //Configurando o MODALITY
+        //Diz respeito ao comportamento das janelas anteriores
+        //quando essa for mostrada
+        //Para bloquear interação com as janelas anteriores
+        stage.initModality(Modality.APPLICATION_MODAL);
+
+        //Mostrando a nova janela
+        stage.show();
     }
-    
 }
-*/

@@ -6,6 +6,7 @@
 package Dados.Entidades;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -34,6 +35,93 @@ public class Cliente {
     private Integer telefone2;
     private Integer email;
 
+    public Cliente(String nome, String cpf, String rg, LocalDate dataNascimemto, String rua, String numeroCasa, String bairro, String cidade, Integer telefone1, Integer telefone2, Integer email) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.rg = rg;
+        this.dataNascimemto = dataNascimemto;
+        this.rua = rua;
+        this.numeroCasa = numeroCasa;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.telefone1 = telefone1;
+        this.telefone2 = telefone2;
+        this.email = email;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.idCliente);
+        hash = 59 * hash + Objects.hashCode(this.nome);
+        hash = 59 * hash + Objects.hashCode(this.cpf);
+        hash = 59 * hash + Objects.hashCode(this.rg);
+        hash = 59 * hash + Objects.hashCode(this.dataNascimemto);
+        hash = 59 * hash + Objects.hashCode(this.rua);
+        hash = 59 * hash + Objects.hashCode(this.numeroCasa);
+        hash = 59 * hash + Objects.hashCode(this.bairro);
+        hash = 59 * hash + Objects.hashCode(this.cidade);
+        hash = 59 * hash + Objects.hashCode(this.telefone1);
+        hash = 59 * hash + Objects.hashCode(this.telefone2);
+        hash = 59 * hash + Objects.hashCode(this.email);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cliente other = (Cliente) obj;
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        if (!Objects.equals(this.cpf, other.cpf)) {
+            return false;
+        }
+        if (!Objects.equals(this.rg, other.rg)) {
+            return false;
+        }
+        if (!Objects.equals(this.rua, other.rua)) {
+            return false;
+        }
+        if (!Objects.equals(this.numeroCasa, other.numeroCasa)) {
+            return false;
+        }
+        if (!Objects.equals(this.bairro, other.bairro)) {
+            return false;
+        }
+        if (!Objects.equals(this.cidade, other.cidade)) {
+            return false;
+        }
+        if (!Objects.equals(this.idCliente, other.idCliente)) {
+            return false;
+        }
+        if (!Objects.equals(this.dataNascimemto, other.dataNascimemto)) {
+            return false;
+        }
+        if (!Objects.equals(this.telefone1, other.telefone1)) {
+            return false;
+        }
+        if (!Objects.equals(this.telefone2, other.telefone2)) {
+            return false;
+        }
+        if (!Objects.equals(this.email, other.email)) {
+            return false;
+        }
+        return true;
+    }
+
+    
+    
+    
+    
     public Integer getTelefone1() {
         return telefone1;
     }

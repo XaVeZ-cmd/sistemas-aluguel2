@@ -8,6 +8,7 @@ package Dados.Entidades;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,6 +37,59 @@ public class Aluguel {
     
     @ManyToMany
     private List<Roupa> roupas;
+
+    public Aluguel(LocalDate dataAluguel, LocalDate dataDevolucao, Cliente cliente, BigDecimal valor, List<Roupa> roupas) {
+        this.dataAluguel = dataAluguel;
+        this.dataDevolucao = dataDevolucao;
+        this.cliente = cliente;
+        this.valor = valor;
+        this.roupas = roupas;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 47 * hash + Objects.hashCode(this.idAluguel);
+        hash = 47 * hash + Objects.hashCode(this.dataAluguel);
+        hash = 47 * hash + Objects.hashCode(this.dataDevolucao);
+        hash = 47 * hash + Objects.hashCode(this.cliente);
+        hash = 47 * hash + Objects.hashCode(this.valor);
+        hash = 47 * hash + Objects.hashCode(this.roupas);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Aluguel other = (Aluguel) obj;
+        if (!Objects.equals(this.idAluguel, other.idAluguel)) {
+            return false;
+        }
+        if (!Objects.equals(this.dataAluguel, other.dataAluguel)) {
+            return false;
+        }
+        if (!Objects.equals(this.dataDevolucao, other.dataDevolucao)) {
+            return false;
+        }
+        if (!Objects.equals(this.cliente, other.cliente)) {
+            return false;
+        }
+        if (!Objects.equals(this.valor, other.valor)) {
+            return false;
+        }
+        if (!Objects.equals(this.roupas, other.roupas)) {
+            return false;
+        }
+        return true;
+    }
 
     
     

@@ -24,8 +24,6 @@ public class ClienteController implements Initializable {
     @FXML
     private JFXTextField textfieldNome;
     @FXML
-    private TableView<?> Tabela;
-    @FXML
     private TableColumn<?, ?> ColNome;
     @FXML
     private JFXTextField textFieldEmail;
@@ -53,6 +51,8 @@ public class ClienteController implements Initializable {
     private JFXTextField textFieldTelefone1;
     @FXML
     private JFXTextField textFieldTelefone2;
+    @FXML
+    private TableView<?> tabelaCliente;
 
    
     @Override

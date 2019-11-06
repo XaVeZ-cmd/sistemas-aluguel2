@@ -10,7 +10,7 @@
 <AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.cliente.ClienteController">
    <children>
       <JFXTextField fx:id="textfieldNome" labelFloat="true" layoutX="176.0" layoutY="63.0" prefHeight="25.0" prefWidth="437.0" promptText="Nome" />
-      <TableView fx:id="Tabela" layoutX="12.0" layoutY="366.0" prefHeight="112.0" prefWidth="872.0">
+      <TableView fx:id="tabelaCliente" layoutX="12.0" layoutY="366.0" prefHeight="112.0" prefWidth="872.0">
         <columns>
           <TableColumn fx:id="colNumeroCliente" prefWidth="97.0" text="Número cliente" />
           <TableColumn fx:id="ColNome" minWidth="0.0" prefWidth="384.0" text="Nome" />

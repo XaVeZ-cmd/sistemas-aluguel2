@@ -23,7 +23,7 @@
 
             <!-- Endereço de acesso ao BD -->
             <property name="javax.persistence.jdbc.url" 
-                value="jdbc:mysql://localhost/sistema_aluguel_roupas" />
+                value="jdbc:mysql://localhost/projeto" />
 
             <!-- Usuario de acesso ao BD -->
             <property name="javax.persistence.jdbc.user" value="root" />

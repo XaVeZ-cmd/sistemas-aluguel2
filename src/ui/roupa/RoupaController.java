@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 /**
  * FXML Controller class
@@ -31,9 +32,15 @@ public class RoupaController implements Initializable {
     @FXML
     private JFXTextField TextFieldGenero;
     @FXML
-    private TableColumn<?, ?> colNumeroDaRoupa;
+    private TableColumn colNumeroDaRoupa;
     @FXML
-    private TableColumn<?, ?> colTipoDaRoupa;
+    private TableColumn colTipoDaRoupa;
+    @FXML
+    private TableColumn colCor;
+    @FXML
+    private TableView<?> tabelaRoupa;
+
+   
 
     /**
      * Initializes the controller class.

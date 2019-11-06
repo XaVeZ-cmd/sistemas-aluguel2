@@ -17,7 +17,7 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         
         //Icone da janela
-        stage.getIcons().add(new Image("/ui/imagens/icone.png"));
+        stage.getIcons().add(new Image("/ui/main/imagens/roupas.jpg"));
         
         //Abrir maximizado
         stage.setMaximized(true);
