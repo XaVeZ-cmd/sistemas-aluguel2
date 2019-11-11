@@ -48,13 +48,8 @@ public class Aluguel {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 47 * hash + Objects.hashCode(this.idAluguel);
-        hash = 47 * hash + Objects.hashCode(this.dataAluguel);
-        hash = 47 * hash + Objects.hashCode(this.dataDevolucao);
-        hash = 47 * hash + Objects.hashCode(this.cliente);
-        hash = 47 * hash + Objects.hashCode(this.valor);
-        hash = 47 * hash + Objects.hashCode(this.roupas);
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.idAluguel);
         return hash;
     }
 
@@ -71,21 +66,6 @@ public class Aluguel {
         }
         final Aluguel other = (Aluguel) obj;
         if (!Objects.equals(this.idAluguel, other.idAluguel)) {
-            return false;
-        }
-        if (!Objects.equals(this.dataAluguel, other.dataAluguel)) {
-            return false;
-        }
-        if (!Objects.equals(this.dataDevolucao, other.dataDevolucao)) {
-            return false;
-        }
-        if (!Objects.equals(this.cliente, other.cliente)) {
-            return false;
-        }
-        if (!Objects.equals(this.valor, other.valor)) {
-            return false;
-        }
-        if (!Objects.equals(this.roupas, other.roupas)) {
             return false;
         }
         return true;

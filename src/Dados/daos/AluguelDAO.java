@@ -44,7 +44,7 @@ public class AluguelDAO {
 
         //Criando a consulta ao BD
         TypedQuery consulta = gerenciador.createQuery(
-                "Select a from Ator a", Aluguel.class);
+                "Select a from Aluguel a", Aluguel.class);
 
         //Retornar a lista de atores
         return consulta.getResultList();

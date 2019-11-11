@@ -33,17 +33,18 @@ public class Roupa {
         this.tamanho = tamanho;
         this.detalhes = detalhes;
         this.genero = genero;
+        
+        
+    }
+
+    public Roupa(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.idRoupa);
-        hash = 97 * hash + Objects.hashCode(this.tipoRoupa);
-        hash = 97 * hash + Objects.hashCode(this.cor);
-        hash = 97 * hash + Objects.hashCode(this.tamanho);
-        hash = 97 * hash + Objects.hashCode(this.detalhes);
-        hash = 97 * hash + Objects.hashCode(this.genero);
+        hash = 59 * hash + Objects.hashCode(this.idRoupa);
         return hash;
     }
 
@@ -59,30 +60,11 @@ public class Roupa {
             return false;
         }
         final Roupa other = (Roupa) obj;
-        if (!Objects.equals(this.tipoRoupa, other.tipoRoupa)) {
-            return false;
-        }
-        if (!Objects.equals(this.cor, other.cor)) {
-            return false;
-        }
-        if (!Objects.equals(this.tamanho, other.tamanho)) {
-            return false;
-        }
-        if (!Objects.equals(this.detalhes, other.detalhes)) {
-            return false;
-        }
-        if (!Objects.equals(this.genero, other.genero)) {
-            return false;
-        }
         if (!Objects.equals(this.idRoupa, other.idRoupa)) {
             return false;
         }
         return true;
     }
-    
-    
-    
-    
 
     public Integer getIdRoupa() {
         return idRoupa;
@@ -131,9 +113,9 @@ public class Roupa {
     public void setGenero(String genero) {
         this.genero = genero;
     }
-    
 
-   
+    
+    
 
 
 
