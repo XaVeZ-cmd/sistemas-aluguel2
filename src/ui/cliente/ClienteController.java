@@ -2,6 +2,7 @@
 package ui.cliente;
 
 import Dados.Entidades.Cliente;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.List;
@@ -43,11 +44,10 @@ public class ClienteController implements Initializable {
     @FXML
     private JFXTextField textFieldRg;
     @FXML
-    private JFXTextField textFieldDataDeNascimento;
+    private JFXDatePicker textFieldDataDeNascimento;
     @FXML
     private JFXTextField textFieldRua;
-    @FXML
-    private JFXTextField textFieldNumeroRua;
+    
     @FXML
     private JFXTextField textFieldBairro;
     @FXML
@@ -71,6 +71,10 @@ public class ClienteController implements Initializable {
     //Atributo que vai armazenar qual o cliente 
     //foi selecionado na tabela
     private Cliente selecionado;
+    @FXML
+    private JFXTextField textFieldCep;
+    @FXML
+    private JFXTextField textFieldNumeroCasa;
 
     /**
      * Initializes the controller class. Tudo que é feito ao inicializar a
@@ -85,10 +89,10 @@ public class ClienteController implements Initializable {
         
         //configure a tabela
         
-        configurartabelaCliente();
+       configurarTabelaCliente();
         
         // configure a lista de cliente
-      listarClientesTabela();  
+      listarClienteTabela();  
                        
     }   
     @FXML
@@ -97,8 +101,13 @@ public class ClienteController implements Initializable {
         //Verificar se está atualizando ou inserindo
         if(textFieldNumeroCliente.getText().isEmpty()){ //inserindo
             //Pega os dados do fomulário
-            //e cria um objeto ator
-            Cliente a = new Cliente(textfieldNome.getText());
+            //e cria um objeto cliente
+            Cliente a = new Cliente(textfieldNome.getText(),textFieldCpf.getText(),
+                    textFieldRg.getText(),textFieldDataDeNascimento.getValue(),
+                    textFieldRua.getText(),textFieldNumeroCasa.getText(),
+                   textFieldBairro.getText(), textFieldCidade.getText(),
+                    textFieldTelefone1.getText(),textFieldTelefone2.getText(),
+                    textFieldEmail.getText(),textFieldCep.getText());
 
             //Mandar o cliente para a camada de servico
             servico.salvar(a);
@@ -107,7 +116,7 @@ public class ClienteController implements Initializable {
             mensagemSucesso("Cliente salvo com sucesso!");
             
             //Chama o metodo para atualizar a tabela
-            listarClientesTabela();
+            listarClienteTabela();
             
         }else{ //atualizando o cliente
            
@@ -119,8 +128,19 @@ public class ClienteController implements Initializable {
             //Se o botão OK foi pressionado
             if(btn.get() == ButtonType.OK){
                 //Pegar os novos dados do formulário e
-                //atualizar o meu ator
+                //atualizar o meu cliente
                 selecionado.setNome(textfieldNome.getText());
+                selecionado.setTelefone1(textFieldTelefone1.getText());
+                selecionado.setTelefone2(textFieldTelefone2.getText());
+                selecionado.setBairro(textFieldBairro.getText());
+                selecionado.setCidade(textFieldCidade.getText());
+                selecionado.setCpf(textFieldCpf.getText());
+                selecionado.setNumeroCasa(textFieldNumeroCasa.getText());
+                selecionado.setCep(textFieldCep.getText());
+                selecionado.setEmail(textFieldEmail.getText());
+                selecionado.setDataNascimemto(textFieldDataDeNascimento.getValue());
+                selecionado.setRg(textFieldRg.getText());
+                selecionado.setRua(textFieldRua.getText());
                 
                 //Mandando pra camada de serviço salvar as alterações
                 servico.editar(selecionado);
@@ -129,7 +149,7 @@ public class ClienteController implements Initializable {
                 mensagemSucesso("Cliente atualizado com sucesso!"); 
                 
                 //Chama o metodo para atualizar a tabela
-                 listarClientesTabela();
+                 listarClienteTabela();
             }
             
         }
@@ -137,7 +157,20 @@ public class ClienteController implements Initializable {
         
         //Limpando o form
         textFieldNumeroCliente.setText("");
-        textfieldNome.setText("");
+         textfieldNome.setText("");
+        
+            textFieldEmail.setText("");
+            textFieldCpf.setText("");
+            textFieldRg.setText("");
+            textFieldRua.setText("");
+            textFieldCidade.setText("");
+            textFieldBairro.setText("");
+            textFieldNumeroCasa.setText("");
+           textFieldDataDeNascimento.setValue(null);
+            textFieldTelefone1.setText("");
+            textFieldTelefone2.setText("");
+            textFieldCep.setText("");
+        
     }
 
     public void mensagemSucesso(String m) {
@@ -163,7 +196,7 @@ public class ClienteController implements Initializable {
     /**
      * Fazendo configuração das colunas da tabeça
      */
-    private void configurarTabela() {
+    private void configurarTabelaCliente() {
 
         //Dizer de onde a coluna vai pegar o valor para
         //exibir, basta dizer o nome do metodo get
@@ -172,27 +205,28 @@ public class ClienteController implements Initializable {
         // que vc deseja chamar o get (quase sempre)
         //import javafx.scene.control.cell.PropertyValueFactory;
        colNumeroCliente.setCellValueFactory(
-                new PropertyValueFactory("id"));
+                new PropertyValueFactory("idCliente"));
        ColNome.setCellValueFactory(
                 new PropertyValueFactory("nome"));
-              ColCpf.setCellValueFactory(
-                new PropertyValueFactory("cpf"));
+       ColCpf.setCellValueFactory(
+               new PropertyValueFactory("cpf"));
+              
 
     }//configurarTabela
 
     /**
      * Responsável por carregar a lista de clientes na tabela
      */
-    private void listarAtoresTabela() {
+    private void listarClienteTabela() {
         //Limpando quaisquer dados anteriores
         dados.clear();
 
         //Solicitando a camada de servico a lista de clientes
-        List<Cliente> atores = servico.listar();
+        List<Cliente> clientes = servico.listar();
 
-        //Transformar a lista de atores no formato que a tabela
+        //Transformar a lista de clientes no formato que a tabela
         //do JavaFX aceita
-        dados = FXCollections.observableArrayList(atores);
+        dados = FXCollections.observableArrayList(clientes);
 
         //Jogando os dados na tabela
         tabelaCliente.setItems(dados);
@@ -209,14 +243,28 @@ public class ClienteController implements Initializable {
                 .getSelectedItem();
 
         //Se tem algum cliente selecionado
-        if (selecionado != null) { //tem ator selecionado
+        if (selecionado != null) { //tem clienteonado
             //Pegar os dados do cliente e jogar nos campos do
             //formulario
             textFieldNumeroCliente.setText(
-                    String.valueOf( selecionado.getNumeroCliente() ) );
-            textfieldNome.setText( selecionado.getNome() );    
+                    String.valueOf( selecionado.getIdCliente() ) );
+            textfieldNome.setText( selecionado.getNome() ); 
+            textFieldEmail.setText(selecionado.getEmail());
+            textFieldCpf.setText(selecionado.getCpf());
+            textFieldRg.setText(selecionado.getRg());
+            textFieldRua.setText(selecionado.getRua());
+            textFieldCidade.setText(selecionado.getCidade());
+            textFieldBairro.setText(selecionado.getBairro());
+            textFieldNumeroCasa.setText(selecionado.getNumeroCasa());
+            textFieldDataDeNascimento.setValue(selecionado.getDataNascimemto());
+            textFieldTelefone1.setText(selecionado.getTelefone1());
+            textFieldTelefone2.setText(selecionado.getTelefone2());
+            textFieldCep.setText(selecionado.getCep());
+            
+            
+            
         }else{ //não tem cliente selecionado na tabela
-            mensagemErro("Selecione um ator.");
+            mensagemErro("Selecione um cliente.");
         }
 
     }
@@ -258,29 +306,22 @@ public class ClienteController implements Initializable {
                 servico.excluir(selecionado);
                 
                 //mostrar mensagem de sucesso
-                mensagemSucesso("Ator excluído com sucesso");
+                mensagemSucesso("cliente excluído com sucesso");
                 
                 //Atualizar a tabela
-                listarAtoresTabela();              
+                listarClienteTabela();              
                 
             }
             
             
             
         }else{
-            mensagemErro("Selecione um ator.");
+            mensagemErro("Selecione um cliente.");
         }
         
     }
 
-    private void configurartabelaCliente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void listarClientesTabela() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+   
   
 
     

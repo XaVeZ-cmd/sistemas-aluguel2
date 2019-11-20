@@ -18,7 +18,7 @@ public class RoupaServicos {
 
     
     //Atributo para representar a camada de dados
-    private RoupaDAO dao = new RoupaDAO();
+    private  RoupaDAO dao = new RoupaDAO();
     
     public void salvar(Roupa a){
         //Fazer qualquer regra de negócio
@@ -44,6 +44,7 @@ public class RoupaServicos {
     
     /**
      * Recebe um ator e manda para a camada DAO atualizar 
+     * @param a
      */
     public void editar(Roupa a){
         
@@ -57,6 +58,7 @@ public class RoupaServicos {
     
     /**
      *  Recebe um ator para passar para a DAO excluir no BD
+     * @param a
      */
     public void excluir(Roupa a){
         

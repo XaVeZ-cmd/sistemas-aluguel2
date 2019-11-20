@@ -31,11 +31,14 @@ public class Cliente {
     private String numeroCasa;
     private String bairro;
     private String cidade;
-    private Integer telefone1;
-    private Integer telefone2;
-    private Integer email;
+    private String telefone2;
+    private String email;
+    private String telefone1;
+    private String cep;
 
-    public Cliente(String nome, String cpf, String rg, LocalDate dataNascimemto, String rua, String numeroCasa, String bairro, String cidade, Integer telefone1, Integer telefone2, Integer email) {
+    public Cliente(String nome, String cpf, String rg, LocalDate dataNascimemto,
+            String rua, String numeroCasa, String bairro, String cidade,
+           String telefone1, String telefone2, String email, String cep) {
         this.nome = nome;
         this.cpf = cpf;
         this.rg = rg;
@@ -47,11 +50,10 @@ public class Cliente {
         this.telefone1 = telefone1;
         this.telefone2 = telefone2;
         this.email = email;
+        this.cep = cep;
     }
 
-    public Cliente(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public Cliente() {}
 
    
 
@@ -59,27 +61,28 @@ public class Cliente {
     
     
     
-    public Integer getTelefone1() {
+    public String getTelefone1() {
         return telefone1;
     }
 
-    public void setTelefone1(Integer telefone1) {
+    public void setTelefone1(String telefone1) {
         this.telefone1 = telefone1;
     }
 
-    public Integer getTelefone2() {
+    public String getTelefone2() {
         return telefone2;
     }
 
-    public void setTelefone2(Integer telefone2) {
+    public void setTelefone2(String telefone2) {
         this.telefone2 = telefone2;
+
     }
 
-    public Integer getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(Integer email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -154,15 +157,26 @@ public class Cliente {
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
-
-    public Object getNumeroCliente() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+      public String getCep() {
+        return cep;
     }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+
+
+   
+    
+    
+    
+    
+}
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 43 * hash + Objects.hashCode(this.idCliente);
+        hash = 47 * hash + Objects.hashCode(this.idCliente);
         return hash;
     }
 
@@ -182,11 +196,4 @@ public class Cliente {
             return false;
         }
         return true;
-    }
-    
-    
-    
-    
-    
-    
-}
+    }}

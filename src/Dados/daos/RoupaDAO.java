@@ -20,6 +20,7 @@ public class RoupaDAO {
 
     /**
      * Salvar o ator no BD
+     * @param a
      */
     public void salvar(Roupa a) {
 
@@ -50,7 +51,7 @@ public class RoupaDAO {
 
         //Criando a consulta ao BD
         TypedQuery consulta = gerenciador.createQuery(
-                "Select a from Ator a", Roupa.class);
+                "Select a from Roupa a", Roupa.class);
 
         //Retornar a lista de atores
         return consulta.getResultList();
@@ -59,6 +60,7 @@ public class RoupaDAO {
 
     /**
      * Salva as alterações no BD
+     * @param a
      */
     public void editar(Roupa a) {
 
@@ -78,6 +80,7 @@ public class RoupaDAO {
     
     /**
      * Exclui o ator do BD
+     * @param a
      */
     public void excluir(Roupa a){
         

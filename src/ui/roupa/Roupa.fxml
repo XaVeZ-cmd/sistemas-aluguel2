@@ -10,19 +10,19 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.roupa.RoupaController">
    <children>
-      <JFXTextField fx:id="textFieldNumeroDaRoupa" editable="false" labelFloat="true" layoutX="24.0" layoutY="35.0" promptText="Número da roupa" />
+      <JFXTextField fx:id="textFieldIdRoupa" editable="false" labelFloat="true" layoutX="24.0" layoutY="35.0" promptText="Número da roupa" />
       <JFXTextField fx:id="textFieldTipoDaRoupa" labelFloat="true" layoutX="189.0" layoutY="35.0" promptText="Tipo da roupa" />
       <JFXTextField fx:id="textFieldCor" labelFloat="true" layoutX="381.0" layoutY="35.0" promptText="Cor" />
       <JFXTextField fx:id="textFieldTamanho" labelFloat="true" layoutX="24.0" layoutY="88.0" promptText="Tamanho" />
       <JFXTextField fx:id="TextFieldGenero" labelFloat="true" layoutX="189.0" layoutY="88.0" promptText="Genero" />
       <Label layoutX="178.0" layoutY="135.0" prefHeight="31.0" prefWidth="213.0" text="CARACTERISTICA DA ROUPA" />
-      <TextArea layoutX="20.0" layoutY="172.0" prefHeight="44.0" prefWidth="521.0" />
+      <TextArea fx:id="textFieldCaracteristica" layoutX="20.0" layoutY="172.0" prefHeight="44.0" prefWidth="521.0" />
       <Button layoutX="84.0" layoutY="231.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
       <Button layoutX="166.0" layoutY="231.0" mnemonicParsing="false" onAction="#editar" text="Editar" />
       <Button layoutX="235.0" layoutY="231.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
       <TableView fx:id="tabelaRoupa" layoutX="22.0" layoutY="268.0" prefHeight="117.0" prefWidth="560.0">
         <columns>
-          <TableColumn fx:id="colNumeroDaRoupa" prefWidth="113.0" text="Nùmero da roupa" />
+          <TableColumn fx:id="colIdRoupa" prefWidth="113.0" text="Nùmero da roupa" />
           <TableColumn fx:id="colTipoDaRoupa" prefWidth="184.0" text="Tipo da roupa" />
             <TableColumn fx:id="colCor" prefWidth="56.0" text="Cor" />
         </columns>

@@ -16,7 +16,8 @@ public class ClienteDAO {
 
 
     /**
-     * Salvar o ator no BD
+     * Salvar o cliente no BD
+     * @param a
      */
     public void salvar(Cliente a) {
 
@@ -47,7 +48,7 @@ public class ClienteDAO {
 
         //Criando a consulta ao BD
         TypedQuery consulta = gerenciador.createQuery(
-                "Select a from Ator a", Cliente.class);
+                "Select a from Cliente a", Cliente.class);
 
         //Retornar a lista de atores
         return consulta.getResultList();
@@ -56,6 +57,7 @@ public class ClienteDAO {
 
     /**
      * Salva as alterações no BD
+     * @param a
      */
     public void editar(Cliente a) {
 
@@ -74,7 +76,8 @@ public class ClienteDAO {
     }
     
     /**
-     * Exclui o ator do BD
+     * Exclui o cliente do BD
+     * @param a
      */
     public void excluir(Cliente a){
         

@@ -5,7 +5,6 @@
  */
 package Dados.Entidades;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,43 +26,13 @@ public class Roupa {
     private String detalhes;
     private String genero;
 
-    public Roupa(String tipoRoupa, String cor, String tamanho, String detalhes, String genero) {
+    public Roupa(String tipoRoupa, String cor, String tamanho,
+                 String detalhes, String genero) {
         this.tipoRoupa = tipoRoupa;
         this.cor = cor;
         this.tamanho = tamanho;
         this.detalhes = detalhes;
         this.genero = genero;
-        
-        
-    }
-
-    public Roupa(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 59 * hash + Objects.hashCode(this.idRoupa);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Roupa other = (Roupa) obj;
-        if (!Objects.equals(this.idRoupa, other.idRoupa)) {
-            return false;
-        }
-        return true;
     }
 
     public Integer getIdRoupa() {
@@ -113,10 +82,35 @@ public class Roupa {
     public void setGenero(String genero) {
         this.genero = genero;
     }
-
     
-    
+    public Roupa(){};
 
-
-
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 23 * hash + Objects.hashCode(this.idRoupa);
+        return hash;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Roupa other = (Roupa) obj;
+        if (!Objects.equals(this.idRoupa, other.idRoupa)) {
+            return false;
+        }
+        return true;
+    }
+    
+
+    
+}
+
