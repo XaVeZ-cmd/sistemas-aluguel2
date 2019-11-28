@@ -100,5 +100,26 @@ public class ClienteDAO {
         
     }
 
-}
+    
+      public List<Cliente> buscarPeloNome(String nome) {
+
+        //Pegando o gerenciador de acesso ao BD
+        EntityManager gerenciador = JPAUtil.getGerenciador();
+
+        //Criando a consulta ao BD
+        TypedQuery<Cliente> consulta = gerenciador.createQuery(
+                "Select a from Cliente a where a.nome like :nome",
+                
+                
+                
+                Cliente.class);
+
+        //Substituindo o parametro :nome pelo valor da variavel n
+        consulta.setParameter("nome", nome + "%");
+        
+        List<Cliente> lista = consulta.getResultList();
+
+        //Retornar os dados
+        return lista;
+}}
 

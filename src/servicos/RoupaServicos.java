@@ -67,6 +67,11 @@ public class RoupaServicos {
         //Mandar para a DAO excluir
         dao.excluir(a);
     }
-    
+    public List<Roupa> buscarPelaRoupa(String nome){
+        
+        //Qualquer regra de negócio (se aplicável)
+        
+        //Mandar para a DAO buscar os filmes pelo nome
+        return dao.buscarPelaRoupa(nome);
 }
-
+}

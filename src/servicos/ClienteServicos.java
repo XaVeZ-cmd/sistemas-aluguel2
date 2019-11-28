@@ -64,6 +64,13 @@ public class ClienteServicos {
         //Mandar para a DAO excluir
         dao.excluir(a);
     }
+ 
     
-}
+      public List<Cliente> buscarPeloNome(String nome){
+        
+        //Qualquer regra de negócio (se aplicável)
+        
+        //Mandar para a DAO buscar os filmes pelo nome
+        return dao.buscarPeloNome(nome);
+}}
 

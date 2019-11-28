@@ -20,11 +20,10 @@ import javax.persistence.ManyToOne;
  *
  * @author IFNMG
  */
-
 @Entity
 public class Aluguel {
-   
-     @Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idAluguel;
     private LocalDate dataAluguel;
@@ -32,9 +31,8 @@ public class Aluguel {
     @ManyToOne
     private Cliente cliente;
     private BigDecimal valor;
-    
+
     // mostrar que 1 aluguel tem varias roupas
-    
     @ManyToMany
     private List<Roupa> roupas;
 
@@ -44,6 +42,9 @@ public class Aluguel {
         this.cliente = cliente;
         this.valor = valor;
         this.roupas = roupas;
+    }
+
+    public Aluguel() {
     }
 
     @Override
@@ -71,8 +72,6 @@ public class Aluguel {
         return true;
     }
 
-    
-    
     public List<Roupa> getRoupas() {
         return roupas;
     }
@@ -80,8 +79,6 @@ public class Aluguel {
     public void setRoupas(List<Roupa> roupas) {
         this.roupas = roupas;
     }
-    
-    
 
     public Cliente getCliente() {
         return cliente;
@@ -122,5 +119,5 @@ public class Aluguel {
     public void setDataDevolucao(LocalDate dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
-    
+
 }

@@ -102,6 +102,26 @@ public class RoupaDAO {
         gerenciador.getTransaction().commit();
         
     }
+    
+     public List<Roupa> buscarPelaRoupa(String nome) {
 
-}
+        //Pegando o gerenciador de acesso ao BD
+        EntityManager gerenciador = JPAUtil.getGerenciador();
 
+        //Criando a consulta ao BD
+        TypedQuery<Roupa> consulta = gerenciador.createQuery(
+                "Select r from Roupa r where r.tipoRoupa like :tipoRoupa",
+                
+                
+                
+                Roupa.class);
+
+        //Substituindo o parametro :nome pelo valor da variavel n
+        consulta.setParameter("tipoRoupa", nome + "%");
+        
+        List<Roupa> lista = consulta.getResultList();
+
+        //Retornar os dados
+        return lista;
+
+}}
