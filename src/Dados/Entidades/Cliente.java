@@ -18,9 +18,9 @@ import javax.persistence.Id;
  */
 @Entity
 public class Cliente {
-    
+
     // Dados da entidade da tela cliente
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCliente;
     private String nome;
@@ -38,7 +38,7 @@ public class Cliente {
 
     public Cliente(String nome, String cpf, String rg, LocalDate dataNascimemto,
             String rua, String numeroCasa, String bairro, String cidade,
-           String telefone1, String telefone2, String email, String cep) {
+            String telefone1, String telefone2, String email, String cep) {
         this.nome = nome;
         this.cpf = cpf;
         this.rg = rg;
@@ -53,14 +53,9 @@ public class Cliente {
         this.cep = cep;
     }
 
-    public Cliente() {}
+    public Cliente() {
+    }
 
-   
-
-    
-    
-    
-    
     public String getTelefone1() {
         return telefone1;
     }
@@ -157,21 +152,15 @@ public class Cliente {
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
-    
-      public String getCep() {
+
+    public String getCep() {
         return cep;
     }
 
     public void setCep(String cep) {
         this.cep = cep;
 
-
-   
-    
-    
-    
-    
-}
+    }
 
     @Override
     public int hashCode() {
@@ -196,4 +185,9 @@ public class Cliente {
             return false;
         }
         return true;
-    }}
+    }
+    
+    public String toString(){
+        return nome;
+    }
+}

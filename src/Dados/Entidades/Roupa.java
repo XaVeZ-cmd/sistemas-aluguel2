@@ -110,6 +110,10 @@ public class Roupa {
         return true;
     }
     
+    public String toString(){
+        return tipoRoupa;
+    }
+    
 
     
 }

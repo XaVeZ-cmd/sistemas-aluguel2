@@ -61,11 +61,11 @@
                         <Button layoutX="444.0" layoutY="194.0" mnemonicParsing="false" onAction="#salvarAluguel" prefHeight="25.0" prefWidth="199.0" text="SALVAR ALUGUEL" />
                         <TableView fx:id="tabelaAluguel" layoutX="12.0" layoutY="249.0" prefHeight="246.0" prefWidth="718.0">
                           <columns>
-                            <TableColumn fx:id="colNomeClienteAluguel" prefWidth="246.0" text="Nome cliente" />
-                            <TableColumn fx:id="colRoupaTabelaAluguel" prefWidth="171.0" text="Roupa" />
-                              <TableColumn fx:id="colDataRetirada" prefWidth="117.0" text="Data Retirada" />
-                              <TableColumn fx:id="colDataDevolucao" prefWidth="126.0" text="Data Devolução" />
-                              <TableColumn fx:id="colValorAluguel" prefWidth="56.0" text="Valor" />
+                            <TableColumn fx:id="colNomeClienteAluguel" prefWidth="199.0" text="Nome cliente" />
+                            <TableColumn fx:id="colRoupaTabelaAluguel" prefWidth="158.0" text="Roupa" />
+                              <TableColumn fx:id="colDataRetirada" prefWidth="149.0" text="Data Retirada" />
+                              <TableColumn fx:id="colDataDevolucao" prefWidth="137.0" text="Data Devolução" />
+                              <TableColumn fx:id="colValorAluguel" prefWidth="73.0" text="Valor" />
                           </columns>
                         </TableView>
                         <JFXTextField fx:id="textFieldValor" layoutX="69.0" layoutY="194.0" />

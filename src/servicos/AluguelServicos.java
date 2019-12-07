@@ -3,6 +3,7 @@ package servicos;
 
 import Dados.Entidades.Aluguel;
 import Dados.daos.AluguelDAO;
+import Dados.dto.AluguelPorCLientePorRoupa;
 import java.util.List;
 
 
@@ -59,6 +60,14 @@ public class AluguelServicos {
         //Mandar para a DAO excluir
         dao.excluir(a);
     }
+
+    public List<AluguelPorCLientePorRoupa> listarAluguelRoupaCliente() {
+    
+        return dao.listarAluguelRoupaCliente();
+    
+    }
+    
+    
     
 }
 

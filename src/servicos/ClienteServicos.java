@@ -22,7 +22,7 @@ public class ClienteServicos {
     public void salvar(Cliente a){
         //Fazer qualquer regra de negócio
         
-        //Mandar o ator para a camada de dados
+        //Mandar o cliente para a camada de dados
         //para ser salvo no banco de dados
         dao.salvar(a);
     }

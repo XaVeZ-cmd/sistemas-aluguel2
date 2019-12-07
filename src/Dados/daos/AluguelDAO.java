@@ -2,6 +2,7 @@
 package Dados.daos;
 
 import Dados.Entidades.Aluguel;
+import Dados.dto.AluguelPorCLientePorRoupa;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -91,6 +92,22 @@ public class AluguelDAO {
         
         //Commit na transação
         gerenciador.getTransaction().commit();
+        
+    }
+
+    public List<AluguelPorCLientePorRoupa> listarAluguelRoupaCliente() {
+    
+        //Pegando o gerenciador de acesso ao BD
+        EntityManager gerenciador = JPAUtil.getGerenciador();
+
+        //Criando a consulta ao BD
+        TypedQuery<AluguelPorCLientePorRoupa> consulta = gerenciador.createQuery(
+                "SELECT new Dados.dto.AluguelPorCLientePorRoupa(c, r, a)"
+                        + " FROM Aluguel a JOIN a.cliente c JOIN a.roupas r",
+                AluguelPorCLientePorRoupa.class);
+
+       
+        return consulta.getResultList();
         
     }
 

@@ -7,6 +7,8 @@ package Dados.Entidades;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.Entity;
@@ -72,6 +74,16 @@ public class Aluguel {
         return true;
     }
 
+    
+
+ 
+   
+
+ 
+   
+  
+   
+
     public List<Roupa> getRoupas() {
         return roupas;
     }
@@ -120,4 +132,8 @@ public class Aluguel {
         this.dataDevolucao = dataDevolucao;
     }
 
+    
+    
+    
+    
 }
